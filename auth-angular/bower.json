@@ -1,0 +1,14 @@
+{
+  "name": "auth-angular",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "https://github.com/NeitoFR/auth_angular",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
