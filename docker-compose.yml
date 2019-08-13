@@ -1,13 +1,16 @@
-auth_angular:
-  container_name: auth_angular
-  hostname: auth_angular
-  build: 
-    context: .
-    dockerfile: Dockerfile_dev
-  volumes: 
-    - ./:/app
-  working_dir: /app/auth_angular
-  ports:
-    - 80:80
-    - 4200:4200
-  stdin_open: true
+version: "3.7"
+
+services: 
+  auth_angular:
+    container_name: auth_angular
+    hostname: auth_angular
+    build: 
+      context: ./
+      dockerfile: Dockerfile_dev
+    volumes: 
+      - .\:/app
+    working_dir: /app/auth-angular
+    ports:
+      - 80:80
+      - 4200:4200
+    stdin_open: true

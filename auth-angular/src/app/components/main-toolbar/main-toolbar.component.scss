@@ -1,0 +1,15 @@
+:host {
+  width: 100vw;
+}
+
+.n-button {
+  cursor: pointer;
+  height: 100%;
+
+  &:hover {
+    background-color: gray;
+  }
+  &:active {
+    background-color: rgb(187, 187, 187);
+  }
+}

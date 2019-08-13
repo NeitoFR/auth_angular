@@ -1,6 +1,6 @@
 FROM node:8.11.4
 
-ADD ./app /app
+ADD .\auth-angular /app
 
 ENV http_proxy=http://PITC-Zscaler-EMEA-Amsterdam3PR.proxy.corporate.ge.com:80
 
