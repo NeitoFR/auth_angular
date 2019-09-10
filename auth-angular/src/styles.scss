@@ -16,6 +16,7 @@
 // Meta
 
 // Objects
+$inuit-enable-layout--center : true;
 @import "px-layout-design/_objects.layout.scss";
 
 // Component
@@ -30,6 +31,10 @@ app-root {
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.width100 {
+  width: 100%;
 }
 
 

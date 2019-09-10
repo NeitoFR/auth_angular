@@ -1,9 +1,9 @@
 <mat-toolbar color="primary" class="flex flex--row">
-    <span class="flex__item flex__item">Auth & Session Training</span>
+    <a routerLink="/home" routerLinkActive="active" (click)="log()"><div class="n-button flex__item--bottom u-p">Auth & Session Training</div></a>
     <div class="flex__item flex__item"></div>
     <!-- <button mat-raised-button color="basic" class="flex__item--bottom u-m" style="font-size: 20px;"
         (click)="teaService.fillTeaList()">
         Fill mock data
     </button> -->
-    <div class="n-button flex__item--bottom u-p">{{ text | uppercase }}</div>
+    <a routerLink="/login" routerLinkActive="active" (click)="log()"><div class="n-button flex__item--bottom u-p">{{ text | uppercase }}</div></a>
 </mat-toolbar>
