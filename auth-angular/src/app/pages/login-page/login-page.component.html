@@ -4,17 +4,22 @@
    </mat-card-title>
    <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)" class="flex flex--col">
       <mat-form-field class="flex__item">
-         <input matInput placeholder="Username" (ngModel)="(usernameInput)" type="text" value="NeitoFR" name="usernameInput" required>
+         <input matInput placeholder="Username" (ngModel)="(usernameInput)" type="text" value="NeitoFR"
+            name="usernameInput" required>
       </mat-form-field>
       <mat-form-field class="flex__item">
-         <input matInput placeholder="Password" (ngModel)="(passwordInput)" type="password" value="tructruc123" name="passwordInput" required>
+         <input matInput placeholder="Password" (ngModel)="(passwordInput)" type="password" value="tructruc123"
+            name="passwordInput" required>
       </mat-form-field>
 
       <button mat-flat-button color="primary" class="flex__item--middle u-1/3 u-mt+" type="submit"
          [disabled]="loginForm.invalid">
          Login
       </button>
+      <button mat-flat-button color="primary" class="flex__item--middle u-1/3 u-mt+" type="button" (click)="fillMock()">
+         Fill
+      </button>
    </form>
 
-   
+
 </mat-card>

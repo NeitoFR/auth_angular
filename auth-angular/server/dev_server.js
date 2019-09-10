@@ -29,7 +29,7 @@ const httpServer = http.createServer(app);
 
 httpServer.listen(process.env.DEV_SERVER_PORT, () => {
   console.log("HTTP Server running on port " + process.env.DEV_SERVER_PORT);
-  console.log("http://localhost:" + process.env.DEV_SERVER_PORT);
+  // console.log("http://localhost:" + process.env.DEV_SERVER_PORT);
 });
 
 

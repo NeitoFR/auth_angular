@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, NgForm, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-login-page',
@@ -12,6 +13,7 @@ export class LoginPageComponent implements OnInit {
 
   usernameInput: string;
   passwordInput: string;
+  loginForm: FormGroup;
 
   constructor() { }
 
@@ -21,6 +23,12 @@ export class LoginPageComponent implements OnInit {
   login(creds: any) {
     console.log("Wants to log in with : \n\tUsername : " + creds.usernameInput + "\n\tPassword : " + creds.passwordInput);
 
+  }
+
+  fillMock() {
+    this.loginForm.patchValue({
+      usernameInput: "NeitoFR"
+    })
   }
 
 }
