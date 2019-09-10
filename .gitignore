@@ -8,8 +8,8 @@ auth-angular/dist
 /bazel-out
 
 # dependencies
-auth-angular/node_modules
-auth-angular/bower_components
+*/**/node_modules
+*/**/bower_components
 
 # profiling files
 chrome-profiler-events*.json

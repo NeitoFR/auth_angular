@@ -1,4 +1,0 @@
-{
-    "proxy": "http://PITC-Zscaler-EMEA-Amsterdam3PR.proxy.corporate.ge.com:80",
-    "https-proxy":"http://PITC-Zscaler-EMEA-Amsterdam3PR.proxy.corporate.ge.com:80"
-}

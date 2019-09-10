@@ -11,23 +11,28 @@ import { FormControl, NgForm, FormGroup } from '@angular/forms';
 })
 export class LoginPageComponent implements OnInit {
 
-  usernameInput: string;
-  passwordInput: string;
   loginForm: FormGroup;
 
   constructor() { }
 
   ngOnInit() {
+    this.loginForm = new FormGroup({
+      usernameInput: new FormControl(), 
+      passwordInput: new FormControl()
+    });
   }
 
-  login(creds: any) {
-    console.log("Wants to log in with : \n\tUsername : " + creds.usernameInput + "\n\tPassword : " + creds.passwordInput);
+  login() {
+    console.log("Wants to log in with : \n\tUsername : " + this.loginForm.get('usernameInput').value + "\n\tPassword : " + this.loginForm.get('passwordInput').value );
+    // console.log(this.loginForm.controls.);
 
+    this.loginForm.reset();
   }
 
   fillMock() {
     this.loginForm.patchValue({
-      usernameInput: "NeitoFR"
+      usernameInput: "NeitoFR",
+      passwordInput: "tructruc123"
     })
   }
 

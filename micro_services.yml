@@ -1,0 +1,27 @@
+version: "3.7"
+
+services:  
+  mongo_api_dev:
+    container_name: mongo_api
+    hostname: mongo_api
+    build: 
+      context: ./services/mongo_api
+      dockerfile: Dockerfile_dev
+    volumes: 
+      - ./services/mongo_api/app:/app
+    ports:
+      - 3501:3501
+    stdin_open: true
+
+  auth_angular:
+    container_name: auth_angular
+    hostname: auth_angular
+    build: 
+      context: ./services/auth-angular
+      dockerfile: Dockerfile_dev
+    volumes: 
+      - ./services/auth-angular/app:/app
+    ports:
+      - 4200:4200
+      - 49153:49153
+    stdin_open: true
