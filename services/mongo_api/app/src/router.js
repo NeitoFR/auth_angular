@@ -14,6 +14,19 @@ const express = require("express"),
 
 app.use(bodyParser.json());
 
+app.all('*', (req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With, Access-Control-Allow-Origin, Access-Control-Allow-Headers, Access-Control-Allow-Methods, Content-Type");
+  res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
+  res.header('Content-Type','application/json');
+  console.log("Headers added to the request");
+
+  console.log('Request received on route : '+ req.path," with method : "+ req.method);
+  if(req.method == "POST")
+      console.log("Body : "+ JSON.stringify(req.body));
+
+  next()
+})
 app.get("/env", (req, res) => {
   res.send(env.parsed).end();
 });

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, NgForm, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
+import { LoginService } from 'src/app/services/login.service';
+import { ToastrService } from 'src/app/services/toastr.service';
 
 @Component({
   selector: 'app-login-page',
@@ -13,7 +15,7 @@ export class LoginPageComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor() { }
+  constructor(private loginService: LoginService, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.loginForm = new FormGroup({
@@ -23,9 +25,17 @@ export class LoginPageComponent implements OnInit {
   }
 
   login() {
-    console.log("Wants to log in with : \n\tUsername : " + this.loginForm.get('usernameInput').value + "\n\tPassword : " + this.loginForm.get('passwordInput').value );
+    this.toastr.info("Start logging attempt")
+    console.log("Start of logging.\nWants to log in with : \n\tUsername : " + this.loginForm.get('usernameInput').value + "\n\tPassword : " + this.loginForm.get('usernameInput').value );
     // console.log(this.loginForm.controls.);
-
+    this.loginService.login({
+      username: this.loginForm.get('usernameInput').value,
+      password: this.loginForm.get('usernameInput').value
+    }).then(() => {
+      console.log("End of logging");
+      this.toastr.info("End of logging attempt")
+      
+    })
     this.loginForm.reset();
   }
 

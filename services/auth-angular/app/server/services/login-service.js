@@ -11,11 +11,12 @@ app.post("/login", (req, res) => {
   .request({
     method: "GET",
     url: "/env",
-    baseURL: "http://mongodb_api:3501",
+    baseURL: "http://localhost:3501",
   })
   .then(response => {
-    console.log("response from " + checkedBody.baseURL);
-    console.log(response.data.result);
+    // console.log("response from " + checkedBody.baseURL);
+    console.log(response.data);
+    // console.log(response.data.result);
     
     res.send(response.data.result).end();
   })
