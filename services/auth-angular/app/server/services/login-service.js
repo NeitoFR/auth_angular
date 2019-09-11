@@ -1,8 +1,27 @@
-var express = require('express');
+var express = require('express'),
+    axios = require('axios');
 require('dotenv').config();
 
 var app = module.exports = express.Router();
 
 app.post("/login", (req, res) => {
-    res.status(200).send("Hello "+ (req.body.usernameInput || "no one")).end();
+  console.log("Looking on /env route");
+  
+  axios
+  .request({
+    method: "GET",
+    url: "/env",
+    baseURL: "http://mongodb_api:3501",
+  })
+  .then(response => {
+    console.log("response from " + checkedBody.baseURL);
+    console.log(response.data.result);
+    
+    res.send(response.data.result).end();
+  })
+  .catch(err => {
+    console.log("Error during microservices request ", err);
+      res.send(err).end();
+    });
 })
+
